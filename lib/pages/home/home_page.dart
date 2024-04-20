@@ -231,7 +231,7 @@ class _HomePageScreenState extends State<HomePageScreen>
                                     builder: (context) => const EditQuizzes()),
                               );
                             },
-                            child: Text('Admin'))
+                            child: Text('Clear data'))
                     ],
                   ),
                 ),

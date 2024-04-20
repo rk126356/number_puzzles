@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:number_puzzles/models/number_puzzle_model.dart';
-import 'package:number_puzzles/pages/home/home_page.dart';
-import 'package:number_puzzles/pages/play/play_page.dart';
 import 'package:number_puzzles/pages/shop/shop_page.dart';
 import 'package:number_puzzles/providers/coin_provider.dart';
 import 'package:number_puzzles/providers/questions_provider.dart';
@@ -330,13 +328,16 @@ class _PlayQuizScreenState extends State<PlayQuizScreen> {
   void handleShowAnswer() {
     final coinProvider = Provider.of<CoinProvider>(context, listen: false);
     final music = Provider.of<AudioProvider>(context, listen: false);
-    if (coinProvider.coins >= 30) {
+    if (coinProvider.coins >= 50 || widget.question[0].isAnswerShowed) {
       if (music.isSoundTurnedOn) {
         music.ans();
       }
       if (!widget.question[0].isAnswerShowed) {
         coinProvider.subtractCoins(50);
       }
+      setState(() {
+        widget.question[0].isAnswerShowed = true;
+      });
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -350,9 +351,6 @@ class _PlayQuizScreenState extends State<PlayQuizScreen> {
           );
         },
       );
-      setState(() {
-        widget.question[0].isAnswerShowed = true;
-      });
     } else {
       if (music.isSoundTurnedOn) {
         music.wrong();

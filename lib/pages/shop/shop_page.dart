@@ -393,7 +393,7 @@ class _ShopPageScreenState extends State<ShopPageScreen> {
                                     value.setCurrentValue("Coins", 500);
                                     final PurchaseParam purchaseParam =
                                         PurchaseParam(
-                                            productDetails: _products[4]);
+                                            productDetails: _products[0]);
                                     _inAppPurchase.buyConsumable(
                                         purchaseParam:
                                             purchaseParam); //buyNonConsumable to buy non-consumable products
@@ -407,7 +407,7 @@ class _ShopPageScreenState extends State<ShopPageScreen> {
                                     value.setCurrentValue("Coins", 1000);
                                     final PurchaseParam purchaseParam =
                                         PurchaseParam(
-                                            productDetails: _products[0]);
+                                            productDetails: _products[2]);
                                     _inAppPurchase.buyConsumable(
                                         purchaseParam:
                                             purchaseParam); //buyNonConsumable to buy non-consumable products
@@ -421,7 +421,7 @@ class _ShopPageScreenState extends State<ShopPageScreen> {
                                     value.setCurrentValue("Coins", 3000);
                                     final PurchaseParam purchaseParam =
                                         PurchaseParam(
-                                            productDetails: _products[0]);
+                                            productDetails: _products[3]);
                                     _inAppPurchase.buyConsumable(
                                         purchaseParam:
                                             purchaseParam); //buyNonConsumable to buy non-consumable products
